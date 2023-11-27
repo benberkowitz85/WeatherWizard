@@ -1,11 +1,12 @@
 style.css
-.footer {
+
+footer {
   position: relative;
   bottom: 0;
   width: 100%;
   z-index: -1;
   height: 200px;
-  background-color: rgb(87, 192, 241);
+  background-color: rgb(4, 166, 241);
   text-align: center;
   margin-top: 30px;
 }
