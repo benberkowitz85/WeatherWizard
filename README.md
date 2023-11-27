@@ -3,6 +3,11 @@ Introducing the weather wizard
 
 Demo
 
+Live Link
+https://benberkowitz85.github.io/WeatherWizard/
+
+GitHub Link
+https://github.com/benberkowitz85/WeatherWizard
 
 User Story
 AS A traveler
