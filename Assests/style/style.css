@@ -1,6 +1,20 @@
-style.css
+header{
+position: relative;
+width:auto;
+height: auto;
+background-color: aqua;
+text-align: center;
+}
 
-footer {
+.section1{
+  position: relative;
+  height: auto;
+  width: auto;
+  background-color:bisque;
+  text-align: center;
+}
+
+.footer {
   position: relative;
   bottom: 0;
   width: 100%;
