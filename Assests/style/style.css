@@ -7,13 +7,21 @@ background-color: aqua;
 text-align: center;
 }
 
-.section1{
+.section1 {
   position: relative;
   height: auto;
   width: auto;
   background-color:bisque;
   text-align: center;
 }
+
+.body {
+  display:flex;
+  justify-items: center;
+  justify-content:center;
+  align-items: center;
+}
+
 
 .footer {
   position: relative;
