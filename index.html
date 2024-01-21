@@ -1,29 +1,81 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<head lang="en.us">
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Assests\style\style.css" />
-    </head>
+    <title>Weather Wizard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
 <body>
+    <header>
+        <h1> ⚡❄️☀️  The Weather Wizard ⚡❄️☀️</h1>
+        <h3>She Said It's Cold Outside and I Forgot My Rancoat </h3>
+        <h4>Don't Be Like Rob Thomas, Use The Weather Wizard!</h4>
+    </header>
 
-<div class="Card">
-  <div class="search">
-    <input type="text" class="search-bar">
-    <button><img src="Assests\IMG\search.jpg" height="10px" width="10px"></button>
-  </div>
-</div>
+    <div class="container-fluid" style="max-width: 1400px">
+        <div class="row">
+            <aside class="col-lg-3 pb-3">
+                
+                <div id="seacrh-div" class="form mt-3">
+                    <div class="card">
+                        <h3 class="card-header text-uppercase">Search By City</h3>
+                        <form id="search-form" class="card-body">
+                        <label class="form-label p-2" for="search-input">City Name</label>
+                        <input name="cityname" id="search-input" type="text" class="form-input" placeholder="City Name...." />
+                        <button id="search-button" type="search-button" class="btn btn-primary mt-2">Enter</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">History</div>
+                    <div class="list-group" id="history"></div>
+                </div>
+            </aside>
 
-<div class="weather">
-  <h2 class="city">Weather Forecast</h2>
-  <div class="temp">51°C</div>
-  <img src="Assests\IMG\temp.jpg" width="30px" height="30px">
-  <Div class="description">Cloudy</Div>
-  <div class="humidity">humidity: 60%</div>
-  <div class="win">Wind Speed: 6.2 km/h</div>
-</div>
+            <div class="col-lg-9 pb-3">
+                <section id="today" class="mt-3" role="region" aria-live="polite"></section>
+                <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
+            </div>
+        </div>
+    </div>
+    
 
-<script src="Assests\Js\script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
+    crossorigin="anonymous"
+    ></script> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" 
+    integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js"
+    integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js" 
+    integrity="sha512-m00bfmYnAl3plEBlQfeQUhw/U2uvmw29V2+jxSWpAjankMWS+zAsjezbKWDEJNXqWq9o9qQZSOiA2RKDpa4D5w==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"
+    ></script>
+    <script src="Assests\Js\script.js"></script>
+
+<section class="footer">
+    <h3>Follow me on social media:</h3>
+<a href="https://www.facebook.com/bjberkow/"><img src="Footer Photos\Facebook.png"
+width="150px" height="100px" border="15px" style="border-color:black"/></a>
+<a href="https://www.instagram.com/finnbarkowitz/"><img src="Footer Photos\insta.png"
+width="150px" height="100px" border="15px" style="border-color:black"/></a>
+<a href="https://www.linkedin.com/in/ben-berkowitz-80b98271/"><img src="Footer Photos\link.png"
+width="150px" height="100px" border="15px" style="border-color:black"/></a>
+<a href="https://twitter.com/thebenberkowitz"><img src="Footer Photos\x.jpg"
+width="150px" height="100px"border="15px" style="border-color:black"/></a>
+</section>
 </body>
 </html>
