@@ -1,8 +1,8 @@
 
-// Assign APIs to Variables
+// APIs //
 var weatherApiRootUrl = 'https://api.openweathermap.org';
 var weatherApiKey = 'ef5af7d7db3b62ede640279502cadbe6';
-// Assign Dom Variables
+// Assigned Dom Variables
 var searchForm = document.getElementById('search-form');
 var searchInput = document.getElementById('search-input');
 var searchButton = document.getElementById('search-button');
@@ -10,20 +10,20 @@ var historyEl = document.getElementById('history');
 var todayContainer = document.getElementById('today');
 var forecastContainer = document.getElementById('forecast');
 var searchHistory = [];
-// add timezone plugins to day.js
+// timezone plugins
 dayjs.extend(window.dayjs_plugin_timezone);
 dayjs.extend(window.dayjs_plugin_utc);
-// function to display current weather fetched from OpenWeather Api
+// display current weather fetched from OpenWeather Api
 function getCurrentWeather(city, weather) {
     // setting date with dayjs
     var date = dayjs().format('M/D/YYYY');
-    // getting values for weather elements from api
+    // get weather elements from api
     var tempF = weather.main.temp;
     var humidity = weather.main.humidity;
     var  wind = weather.wind.speed;
     var iconUrl = `https://openweathermap.org/img/w/${weather.weather[0].icon}.png`;
     var iconDescription = weather.weather[0].description || weather.weather[0].main;
-    // creating new html elements to contain data from api
+    // creating elements to contain data from api
     var card = document.createElement('div');
     var cardBody = document.createElement('div');
     var title = document.createElement('h3');
@@ -31,17 +31,17 @@ function getCurrentWeather(city, weather) {
     var tempEl = document.createElement('p');
     var humidityEl = document.createElement('p');
     var windEl = document.createElement('p');
-    // setting attributes for card & cardBody and adding card body to it
+    // attributes for card & cardBody and adding card body to it
     card.setAttribute('class', 'card mb-3');
     cardBody.setAttribute('class', 'row p-2');
     card.append(cardBody);
-    // setting attributes and content to created elements
+    // set attributes and content to created elements
     title.setAttribute('class', 'card-title');
     title.textContent = `${city} (${date})`;
     weatherIcon.setAttribute('src', iconUrl);
     weatherIcon.setAttribute('alt', iconDescription);
     weatherIcon.setAttribute('class', 'weather-image');
-    // add img to title
+    // img to title
     title.append(weatherIcon);
     tempEl.setAttribute('class', 'card-text');
     tempEl.textContent = `Temp: ${tempF}°F`;
@@ -49,21 +49,21 @@ function getCurrentWeather(city, weather) {
     humidityEl.textContent = `Humidity: ${humidity} %`;
     windEl.setAttribute('class', 'card-text');
     windEl.textContent = `Wind: ${wind} MPH`;
-    // adding elements to cardBody
+    // add elements to cardBody
     cardBody.append(title, tempEl, humidityEl, windEl);
-    // clearing input for new city search and adding whole card to today section
+    // clear input for new city search and adding whole card to today section
     todayContainer.innerHTML = '';
     todayContainer.append(card);
 }
 // function to display forcasted weather fetched from OpenWeather Api
 function getForecastWeather(weather) {
-    // getting values for weather elements from api
+    // get values for weather elements from api
     var tempF = weather.main.temp;
     var humidity = weather.main.humidity;
     var  wind = weather.wind.speed;
     var iconUrl = `https://openweathermap.org/img/w/${weather.weather[0].icon}.png`;
     var iconDescription = weather.weather[0].description;
-// creating new html elements to contain data from api
+// create new html elements to contain data from api
     var col = document.createElement('div');
     var card = document.createElement('div');
     var cardBody = document.createElement('div');
@@ -167,9 +167,9 @@ function fetchCoords(data) {
     })
 }
 
-// function to get data contains coords from searching by city name
+// function to get data coords from searching by city name
 function fetchWeather(search) {
-    // calling api url that has city data by it's name
+    // calling api url that has city data
     var apiUrl = `${weatherApiRootUrl}/geo/1.0/direct?q=${search}&appid=${weatherApiKey}`;
     // sending url call to get data
     fetch(apiUrl)
@@ -183,7 +183,7 @@ function fetchWeather(search) {
         fetchCoords(data);
     })
 }
-//check if history search element was clicked or not
+//history search element was clicked or not
 function searchHistoryClick (e) {
     if (!e.target.matches('.btn-history')) {
         return;
@@ -192,7 +192,7 @@ function searchHistoryClick (e) {
     var search = Btn.getAttribute('data-search');
     fetchWeather(search);
 }
-//call functions when button clicked
+//functions when button clicked
 getStorage();
 searchButton.addEventListener('click', function(event) {
     var search = searchInput.value;
